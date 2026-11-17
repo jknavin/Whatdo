@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6c5ce7">
+<title>Whatdo — your to-dos, everywhere</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="logo">What<span>do</span><span id="proBadge" class="pro-badge hidden">PRO</span></div>
+    <div class="chip"><span id="dot" class="dot"></span><span id="statusText">Local only</span></div>
+    <img id="avatar" class="avatar hidden" alt="" referrerpolicy="no-referrer">
+    <button id="btnSettings" class="icon-btn" aria-label="Settings">⚙</button>
+  </header>
+
+  <div id="signinBanner" class="card banner">
+    <p>Sign in with Google to sync your tasks across the website, extension and Android app.</p>
+    <button id="btnSignin" class="btn sm">Sign in</button>
+  </div>
+
+  <form id="addForm" class="card add" autocomplete="off">
+    <input id="newTask" type="text" placeholder="What do you need to do?" maxlength="300">
+    <select id="tagSelect" aria-label="Tag"></select>
+    <button class="btn" type="submit">Add</button>
+  </form>
+
+  <div id="filters" class="filters"></div>
+
+  <div class="card">
+    <ul id="list"></ul>
+    <div id="empty" class="empty hidden">Nothing here. Add your first task above ✨</div>
+  </div>
+
+  <div class="foot"><span id="count"></span><span>Double-click a task to edit</span></div>
+</div>
+
+<!-- Settings -->
+<div id="settingsModal" class="modal"><div class="sheet card">
+  <h2>Settings</h2>
+  <div class="row"><span>Theme</span>
+    <select id="themeSel"><option value="auto">Auto</option><option value="light">Light</option><option value="dark">Dark</option></select></div>
+
+  <div id="proUpsell" class="card banner" style="margin:10px 0">
+    <p>Custom colors and colored tags are part of <b>Whatdo Pro</b>.</p>
+    <button id="btnUpgrade" class="btn sm">Upgrade</button>
+  </div>
+  <div id="proActive" class="hidden" style="color:var(--ok);font-size:13px;margin:8px 0">✓ Whatdo Pro is active</div>
+
+  <div id="proLockColors"><div class="row"><span>Accent color <span class="pro-badge">PRO</span></span></div>
+    <div id="swatches" class="swatches"></div></div>
+
+  <div id="proLockTags" style="margin-top:12px"><div class="row"><span>Tags <span class="pro-badge">PRO colors</span></span></div>
+    <div id="tagList"></div></div>
+  <div class="tagrow"><input id="newTag" type="text" placeholder="New tag" maxlength="24" class="field"><button id="addTagBtn" class="btn sm">Add</button></div>
+  <div style="font-size:12px;color:var(--muted)">Free: up to 3 plain tags. Pro: unlimited tags with your own colors.</div>
+
+  <div class="row" style="margin-top:14px">
+    <button id="btnSyncNow" class="btn ghost sm">Sync now</button>
+    <button id="btnSignout" class="btn ghost sm">Sign out</button>
+    <button class="btn sm" data-close>Done</button>
+  </div>
+</div></div>
+
+<!-- Pro -->
+<div id="proModal" class="modal"><div class="sheet card">
+  <h2>Whatdo Pro</h2>
+  <div class="price"><span id="priceText">$5</span> <small>one-time</small></div>
+  <ul class="feat" style="list-style:disc">
+    <li>Customized accent colors (any color you like)</li>
+    <li>Unlimited custom tags, each with its own color</li>
+    <li>Works on website, extension and Android with one Google account</li>
+  </ul>
+  <button id="btnBuy" class="btn" style="width:100%">Buy Pro</button>
+  <div class="tagrow" style="margin-top:14px">
+    <input id="licenseKey" class="field" type="text" placeholder="Already paid? Enter license key">
+    <button id="licenseBtn" class="btn ghost sm">Activate</button>
+  </div>
+  <div class="row"><span></span><button class="btn ghost sm" data-close>Close</button></div>
+</div></div>
+
+<div id="toast" class="toast"></div>
+<script src="config.js"></script>
+<script src="platform.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

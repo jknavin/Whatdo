@@ -1,0 +1,12 @@
+{
+  "appId": "com.whatdo.app",
+  "appName": "Whatdo",
+  "webDir": "www",
+  "plugins": {
+    "GoogleAuth": {
+      "scopes": ["profile", "email", "https://www.googleapis.com/auth/drive.appdata"],
+      "serverClientId": "YOUR_WEB_CLIENT_ID.apps.googleusercontent.com",
+      "forceCodeForRefreshToken": false
+    }
+  }
+}

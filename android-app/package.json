@@ -1,0 +1,13 @@
+{
+  "name": "whatdo-android",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Whatdo Android app (Capacitor wrapper)",
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/browser": "^6.0.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@codetrix-studio/capacitor-google-auth": "3.4.0-rc.4"
+  }
+}
